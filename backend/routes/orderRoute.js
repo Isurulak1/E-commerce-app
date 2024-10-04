@@ -3,6 +3,7 @@ import { placeOrder, placeOrderStripe, placeOrderRazorpay, allOrders, userOrders
 import adminAuth from '../middleware/adminAuth.js';
 import authUser from '../middleware/auth.js';
 
+
 const orderRouter = express.Router();
 
 //admin Feature
@@ -15,6 +16,6 @@ orderRouter.post('/stripe',authUser,placeOrderStripe);
 orderRouter.post('/razorpay',authUser,placeOrderRazorpay);
 
 //User Feature
-orderRouter.post('/userorders'.authUser,userOrders)
+orderRouter.post('/userorders',authUser,userOrders)
 
 export default orderRouter;
